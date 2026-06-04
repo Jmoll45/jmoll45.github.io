@@ -1,2 +1,2 @@
 # jmoll45.github.io
-<a href="jmoll45.github.io">www.jmoll45.github.io</a>
+<a href="/index.html">jmoll45.github.cio</a>
