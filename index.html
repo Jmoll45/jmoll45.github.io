@@ -53,6 +53,17 @@
     max-height: 100%; /* Adjust image height */
     object-fit: contain;
 }
+img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Optional: adjust how the image looks in fullscreen mode */
+        img:fullscreen {
+            object-fit: contain;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
 
 .caption {
     padding: 8px;
@@ -236,5 +247,24 @@
 
 </div>
 
+ <script>
+        // 1. Select all image elements on the page
+        const images = document.querySelectorAll("img");
+
+        // 2. Loop through each image and attach the click event listener
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    // "img" refers to the specific image that was clicked
+                    img.requestFullscreen().catch(err => {
+                        alert(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+        });
+    </script>
+	
 </body>
 </html>
