@@ -33,12 +33,13 @@
 .gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-auto-rows: max-content; /* Sizes rows tightly around the contents */
+    align-items: start;          /* Prevents cards from stretching vertically */
     width: 100vw;
-    /*height: 100vh;*/
     gap: 15px;
     padding: 20px;
 }
+
 
 .image-card {
     background: #76ABAE;
